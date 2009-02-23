@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<coda version="0.1">
+  <div xpos="0" ypos="0" background="#D51007" height="80">
+    <img src="http://cdn.last.fm/flatness/logo.6.png" />
+  </div>
+
+  <div ypos="100">
+    {% for artist in artists %}
+    <img src="{{ artist.image_url }}" />
+    <div xpos="200" height="64">
+      <p>
+	<span color="#000000" size="24000">#{{ artist.rank }}: {{ artist.name|safe }}</span>
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</coda>

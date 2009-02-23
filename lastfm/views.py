@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 
 import urllib2
 from xml.etree import ElementTree as ET
+import datetime
 
 def album(request):
 
@@ -11,6 +12,8 @@ def album(request):
     host = request.META.get('HTTP_X_FORWARDED_HOST', request.META.get('HTTP_HOST', '127.0.0.1'))
     
     uuid = tree.find('weeklyartistchart').get('from')
+    from_ = datetime.datetime.fromtimestamp(float(tree.find('weeklyartistchart').get('from')))
+    to_ = datetime.datetime.fromtimestamp(float(tree.find('weeklyartistchart').get('to')))
 
     artists = [{'mbid': node.find('mbid').text,
                 'rank': node.get('rank'),
@@ -26,4 +29,6 @@ def album(request):
     return render_to_response('weekly.cml',
                               {'artists': artists,
                                'uuid': uuid,
-                               'host': host})
+                               'host': host,
+                               'from': from_,
+                               'to': to_})

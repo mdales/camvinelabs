@@ -6,5 +6,5 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns(
     '',
-    (r'^lastfm/', include('labs.lastfm.urls')),
+    (r'^django/lastfm/', include('djangolabs.lastfm.urls')),
 )

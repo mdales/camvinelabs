@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <coda version="0.1">
-  <div margin="0">
-    <img src="http://cdn.last.fm/webclient/lastfmlogo.jpg"/>
-    <div xpos="200" ypos="0"><span color="#D51007" size="24000">LastFM weekly charts</span></div>
+  <div xpos="0" ypos="0" width="100%" height="100%" background="#ffffff">
+  <div margin="20">
+    <img src="http://cdn.last.fm/webclient/lastfmlogo.jpg" margin="10"/>
+    <div xpos="200" ypos="0"><span color="#D51007" size="24000">LastFM - weekly artist charts</span></div>
   </div>
   <div background="#D51007" height="5" margin="0">
   </div>
-  <div>
+  <div xpos="-400">
     <span color="#666666" size="12000">From {{ from|date:"D d M Y"  }} to {{ to|date:"D d M Y"  }}</span>
   </div>
   <div ypos="100">
@@ -14,10 +15,11 @@
     <img src="{{ artist.image_url }}" height="64"/>
     <div xpos="200" height="64">
       <p>
-	<span color="#D51007" size="24000">#{{ artist.rank }}:</span>
-	<span  color="#000000" size="24000">{{ artist.name|safe }}</span>
+        <span color="#D51007" size="24000">#{{ artist.rank }}:</span>
+        <span  color="#000000" size="24000">{{ artist.name|safe }}</span>
       </p>
     </div>
     {% endfor %}
+  </div>
   </div>
 </coda>

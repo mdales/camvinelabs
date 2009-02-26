@@ -6,5 +6,6 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns(
     '',
-    (r'^django/lastfm/', include('djangolabs.lastfm.urls')),
+    (r'^django/lastfm/', include('camvinelabs.lastfm.urls')),
+    (r'^django/bbcbackstage/', include('camvinelabs.bbcbackstage.urls')),
 )

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<coda version="0.1">
+	<div background="#417378" foreground="#f4f7d9">
+		<p><span size="32000">Upcoming schedule for {{channel}} on <date format="%d %b %Y"/></span></p>
+	</div>
+	
+	<div background="#a4cfbe">
+
+		{% for program in program_list %}
+			<p><span size="24000" color="#f4f7d9">{{program.title}} - {{program.time}}</span></p>
+			<p><span size="16000" color="#f4f7d9">{{program.description}}</span></p>
+		{% endfor %}
+	</div>
+
+	<div xpos="-200" ypos="5">
+		<!-- you'll need to get hold of the BBC logo images from
+		somewhere else, like this example widget from the BBC 
+		http://www0.rdthdo.bbc.co.uk/services/api/examples/widget/doc.html -->
+		<img src="http://maple/~mwd/bbc/{{channel}}.png"/>
+	</div>
+
+</coda>
